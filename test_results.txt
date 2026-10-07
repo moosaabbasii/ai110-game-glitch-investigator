@@ -1,0 +1,31 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.3, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\moosa\AppData\Local\Python\pythoncore-3.14-64\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\moosa\OneDrive - University of South Florida\Desktop\Codepath Intro to AI
+plugins: anyio-4.13.0
+collecting ... collected 22 items
+
+tests/test_game_logic.py::test_difficulty_ranges[Easy-expected_range0] PASSED [  4%]
+tests/test_game_logic.py::test_difficulty_ranges[Normal-expected_range1] PASSED [  9%]
+tests/test_game_logic.py::test_difficulty_ranges[Hard-expected_range2] PASSED [ 13%]
+tests/test_game_logic.py::test_unknown_difficulty_is_not_silently_accepted PASSED [ 18%]
+tests/test_game_logic.py::test_parse_guess_rejects_empty_and_non_integer_input[None] PASSED [ 22%]
+tests/test_game_logic.py::test_parse_guess_rejects_empty_and_non_integer_input[] PASSED [ 27%]
+tests/test_game_logic.py::test_parse_guess_rejects_empty_and_non_integer_input[   ] PASSED [ 31%]
+tests/test_game_logic.py::test_parse_guess_rejects_empty_and_non_integer_input[4.5] PASSED [ 36%]
+tests/test_game_logic.py::test_parse_guess_rejects_empty_and_non_integer_input[banana] PASSED [ 40%]
+tests/test_game_logic.py::test_parse_guess_rejects_empty_and_non_integer_input[1e2] PASSED [ 45%]
+tests/test_game_logic.py::test_parse_guess_accepts_whole_number_with_spaces PASSED [ 50%]
+tests/test_game_logic.py::test_check_guess_returns_correct_outcome_and_direction[50-50-Win-Correct] PASSED [ 54%]
+tests/test_game_logic.py::test_check_guess_returns_correct_outcome_and_direction[60-50-Too High-lower] PASSED [ 59%]
+tests/test_game_logic.py::test_check_guess_returns_correct_outcome_and_direction[40-50-Too Low-higher] PASSED [ 63%]
+tests/test_game_logic.py::test_range_validation_is_inclusive_and_rejects_outside_values PASSED [ 68%]
+tests/test_game_logic.py::test_invalid_range_configuration_fails_loudly PASSED [ 72%]
+tests/test_game_logic.py::test_score_is_awarded_only_for_a_win_and_decreases_by_attempt PASSED [ 77%]
+tests/test_game_logic.py::test_late_win_has_a_minimum_score PASSED       [ 81%]
+tests/test_game_logic.py::test_unknown_score_outcome_fails_loudly[] PASSED [ 86%]
+tests/test_game_logic.py::test_unknown_score_outcome_fails_loudly[Maybe] PASSED [ 90%]
+tests/test_game_logic.py::test_unknown_score_outcome_fails_loudly[too high] PASSED [ 95%]
+tests/test_game_logic.py::test_zero_attempt_is_invalid_for_scoring PASSED [100%]
+
+============================= 22 passed in 0.06s ==============================
