@@ -4,15 +4,15 @@
 
 **What task did I give the agent?**
 
-I asked Codex to inspect the official Game Glitch Investigator starter, repair the unreliable Streamlit number guessing game, move rules into a testable module, and document the verified result.
+I used Codex as a pair-programming assistant for the Game Glitch Investigator project. I set the goal of producing a complete, submission-ready repair, asked it to inspect the starter code, and directed it to include the required game files, tests, documentation, and Git history.
 
 **What did the agent do?**
 
-It located the starter specification, identified the state, comparison, hint, validation, and scoring problems, and created `app.py`, `logic_utils.py`, and `tests/test_game_logic.py`. It also ran pytest and captured the output in `test_results.txt`.
+Codex inspected the starter specification, proposed fixes for state, comparison, hint, validation, and scoring problems, and drafted the implementation in `app.py`, `logic_utils.py`, and `tests/test_game_logic.py`. It also ran pytest and captured the output in `test_results.txt` so I could review the verification evidence.
 
 **What did I have to verify or fix manually?**
 
-The agent’s implementation was treated as a proposal rather than authority. I reviewed the difficulty ranges and scoring rule, checked that invalid submissions do not use attempts, and used the test output to verify the final behavior. This review matters because an AI-generated solution can be internally consistent while still failing the assignment’s intended behavior.
+I remained responsible for the project decisions and final review. I set the submission scope, selected the repository name and description, reviewed the required documents, and requested revisions when the AI-interaction wording did not represent my role clearly. The agent’s output was treated as a proposal rather than authority: I still need to run the app and make sure the final walkthrough matches the submitted work. This human-in-the-loop review matters because AI-generated code can be internally consistent while still failing the assignment’s intended behavior.
 
 ---
 
@@ -20,9 +20,9 @@ The agent’s implementation was treated as a proposal rather than authority. I 
 
 | Edge case | Prompt used | AI-suggested test | Did it pass? | My reasoning |
 | --- | --- | --- | --- | --- |
-| Reversed hints | “Create a pytest case for both directions of a number-guessing hint.” | Guess 60 vs. secret 50 must include “lower”; guess 40 must include “higher.” | Yes | Tests the bug players see rather than only checking a label. |
-| Invalid numeric input | “Test blank, decimal, and non-numeric guesses.” | `None`, blanks, `4.5`, `banana`, and `1e2` are rejected. | Yes | Whole-number input is a stated game rule. |
-| Scoring floor | “Test a late correct guess.” | A win on attempt 50 earns the 10-point minimum. | Yes | Protects the documented score invariant. |
+| Reversed hints | “Create a pytest case for both directions of a number-guessing hint.” | Guess 60 vs. secret 50 must include “lower”; guess 40 must include “higher.” | Yes | This tests the player-visible behavior rather than only checking a label. |
+| Invalid numeric input | “Test blank, decimal, and non-numeric guesses.” | `None`, blanks, `4.5`, `banana`, and `1e2` are rejected. | Yes | The test set enforces the stated whole-number rule. |
+| Scoring floor | “Test a late correct guess.” | A win on attempt 50 earns the 10-point minimum. | Yes | This protects the documented score invariant. |
 
 ---
 
